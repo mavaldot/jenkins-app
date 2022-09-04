@@ -14,3 +14,15 @@ describe('Hola', () => {
         });
     });
 });
+
+describe('Hello', () => {
+
+    describe('/GET Hello', () => {
+        it('it should get Hello', async () => {
+            const response = await supertest(server).get('/hello');
+            console.log('hello');
+            expect(response.status).to.eql(200);
+            expect(response.body.msg).to.eql('hello');
+        });
+    });
+});
